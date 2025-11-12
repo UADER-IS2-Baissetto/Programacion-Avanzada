@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buscador de viajes Flybondi</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background: #ffb30073;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #ffb300;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .filtro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filtro input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ffb300;
+      border-radius: 6px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .filtro button {
+      background: #ffb300;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .filtro button:hover {
+      background: #ffa000;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #ff9800;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .sin-resultados {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Buscador de viajes Flybondi</h1>
+  </header>
+
+  <main>
+    <div align="center" style="margin-bottom: 30px;">
+      <img src="https://flybondi.com/assets/images/logo.svg" height="80">
+    </div>
+    <div class="filtro">
+      <input id="presupuesto" type="number" placeholder="Filtrar por Precio (ej. 800)" />
+      <button onclick="buscar()">Buscar</button>
+      <button onclick="resetear()">Ver todos</button>
+    </div>
+
+    <div id="contenedor" class="grid"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
